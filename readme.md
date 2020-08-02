@@ -1,4 +1,4 @@
-##Sistema de Gestion para fuerza de ventas.
+## Sistema de Gestion para fuerza de ventas.
 
 # Requisitos
 
