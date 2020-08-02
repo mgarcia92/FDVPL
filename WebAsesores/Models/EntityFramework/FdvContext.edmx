@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FDV_Entities_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="general">
+          <Key>
+            <PropertyRef Name="rotCode" />
+            <PropertyRef Name="gnlDate" />
+          </Key>
+          <Property Name="rotCode" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="gnlDate" Type="datetime" Nullable="false" />
+          <Property Name="gnlMonthWorkingDays" Type="smallint" Nullable="false" />
+          <Property Name="gnlDaysUpToDate" Type="smallint" Nullable="false" />
+          <Property Name="gnlNextWorkingDay" Type="datetime" Nullable="false" />
+          <Property Name="gnlExchangeRate" Type="money" />
+          <Property Name="jrnCode" Type="nchar" MaxLength="16" />
+          <Property Name="gnlStatus" Type="tinyint" />
+          <Property Name="gnlStatusDate" Type="datetime" />
+          <Property Name="gnlPartialStatus" Type="tinyint" />
+          <Property Name="gnlPartialStatusDate" Type="datetime" />
+          <Property Name="gnlDummy1" Type="nvarchar" MaxLength="64" />
+          <Property Name="gnlDummy2" Type="nvarchar" MaxLength="64" />
+          <Property Name="gnlDummy3" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="journeyTrace">
+          <Key>
+            <PropertyRef Name="jrtCode" />
+          </Key>
+          <Property Name="jrtCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rotCode" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="jrnCode" Type="nchar" MaxLength="16" Nullable="false" />
+          <Property Name="jrtStatus" Type="tinyint" />
+          <Property Name="jrtStatusDate" Type="datetime" />
+          <Property Name="jrtPartialStatus" Type="tinyint" />
+          <Property Name="jrtPartialStatusDate" Type="datetime" />
+          <Property Name="jrtDummy" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="lgnCode" />
+          </Key>
+          <Property Name="lgnCode" Type="nchar" MaxLength="16" Nullable="false" />
+          <Property Name="srgCode" Type="nchar" MaxLength="16" />
+          <Property Name="brcCode" Type="nchar" MaxLength="16" />
+          <Property Name="citCode" Type="nchar" MaxLength="16" />
+          <Property Name="zipCode" Type="nchar" MaxLength="16" />
+          <Property Name="titCode" Type="nchar" MaxLength="16" Nullable="false" />
+          <Property Name="lgnName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="lgnPassword" Type="nchar" MaxLength="16" />
+          <Property Name="lgnForAllLogins" Type="bit" Nullable="false" />
+          <Property Name="lgnOnlyServer" Type="bit" Nullable="false" />
+          <Property Name="lgnDummy1" Type="nvarchar" MaxLength="64" />
+          <Property Name="lgnDummy2" Type="nvarchar" MaxLength="64" />
+          <Property Name="lgnID" Type="nchar" MaxLength="16" />
+          <Property Name="lgnEnrollmentDate" Type="datetime" />
+          <Property Name="lgnEmployee" Type="bit" Nullable="false" />
+          <Property Name="lgnCreatedOn" Type="datetime" />
+          <Property Name="lgnPhone" Type="nvarchar" MaxLength="32" />
+          <Property Name="lgnStreet1" Type="nvarchar" MaxLength="64" />
+          <Property Name="lgnStreet2" Type="nvarchar" MaxLength="64" />
+          <Property Name="lgnStreet3" Type="nvarchar" MaxLength="64" />
+          <Property Name="lgnBackEndCode" Type="nchar" MaxLength="32" />
+          <Property Name="lgnSignature" Type="ntext" />
+          <Property Name="_deleted" Type="bit" Nullable="false" />
+          <Property Name="_stamp" Type="int" Nullable="false" />
+          <Property Name="lgnPassword1" Type="nchar" MaxLength="16" />
+          <Property Name="lgnPassword2" Type="nchar" MaxLength="16" />
+          <Property Name="lgnPassword3" Type="nchar" MaxLength="16" />
+          <Property Name="lgnPassword4" Type="nchar" MaxLength="16" />
+          <Property Name="lgnPasswordDate" Type="datetime" />
+          <Property Name="lgnPasswordRetries" Type="smallint" />
+        </EntityType>
+        <EntityType Name="route">
+          <Key>
+            <PropertyRef Name="rotCode" />
+          </Key>
+          <Property Name="rotCode" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="rotName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="lgnCode" Type="nchar" MaxLength="16" Nullable="false" />
+          <Property Name="prcCodeForSale" Type="nchar" MaxLength="16" />
+          <Property Name="prcCodeForReturn" Type="nchar" MaxLength="16" />
+          <Property Name="prcCodeForSettlement" Type="nchar" MaxLength="16" />
+          <Property Name="txnCode" Type="nchar" MaxLength="16" />
+          <Property Name="tckCode" Type="nchar" MaxLength="16" />
+          <Property Name="tryCode" Type="nchar" MaxLength="16" />
+          <Property Name="chaCode" Type="nchar" MaxLength="16" />
+          <Property Name="groCode" Type="nchar" MaxLength="16" />
+          <Property Name="ttpCode" Type="nchar" MaxLength="16" />
+          <Property Name="gr2Code" Type="nchar" MaxLength="16" />
+          <Property Name="rotCheckSameOrderClass" Type="bit" Nullable="false" />
+          <Property Name="rotMaxPercentageSpecial" Type="money" />
+          <Property Name="rotAccumulatedSalesOfTheMonth" Type="money" />
+          <Property Name="rotAccumulatedOfSpecial" Type="money" />
+          <Property Name="rotMessage1" Type="nvarchar" MaxLength="256" />
+          <Property Name="rotMessage2" Type="nvarchar" MaxLength="256" />
+          <Property Name="rotMessage3" Type="nvarchar" MaxLength="256" />
+          <Property Name="rotDummy1" Type="nvarchar" MaxLength="64" />
+          <Property Name="rotDummy2" Type="nvarchar" MaxLength="64" />
+          <Property Name="rotInvoiceHeader1" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceHeader2" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceHeader3" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceHeader4" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceHeader5" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceBottom1" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceBottom2" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceBottom3" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceBottom4" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInvoiceBottom5" Type="nvarchar" MaxLength="100" />
+          <Property Name="rotInactive" Type="bit" Nullable="false" />
+          <Property Name="rotAverageTime" Type="smallint" />
+          <Property Name="rotAverageSpeed" Type="smallint" />
+          <Property Name="rotTimerValidationCode" Type="nvarchar" MaxLength="32" />
+          <Property Name="rotHtmlPath" Type="nvarchar" MaxLength="256" />
+          <Property Name="rotDriverCode" Type="varchar" MaxLength="16" />
+          <Property Name="rotCoDriverCode" Type="varchar" MaxLength="16" />
+          <Property Name="rotTractorNumber" Type="varchar" MaxLength="16" />
+          <Property Name="rotTrailerNumber" Type="varchar" MaxLength="16" />
+          <Property Name="_deleted" Type="bit" Nullable="false" />
+          <Property Name="_stamp" Type="int" Nullable="false" />
+          <Property Name="_rowVersion" Type="bigint" />
+        </EntityType>
+        <Association Name="lgn_rot">
+          <End Role="login" Type="Self.login" Multiplicity="1" />
+          <End Role="route" Type="Self.route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="login">
+              <PropertyRef Name="lgnCode" />
+            </Principal>
+            <Dependent Role="route">
+              <PropertyRef Name="lgnCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="rot_gnl">
+          <End Role="route" Type="Self.route" Multiplicity="1" />
+          <End Role="general" Type="Self.general" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="route">
+              <PropertyRef Name="rotCode" />
+            </Principal>
+            <Dependent Role="general">
+              <PropertyRef Name="rotCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="rot_jrt">
+          <End Role="route" Type="Self.route" Multiplicity="1" />
+          <End Role="journeyTrace" Type="Self.journeyTrace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="route">
+              <PropertyRef Name="rotCode" />
+            </Principal>
+            <Dependent Role="journeyTrace">
+              <PropertyRef Name="rotCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="XSR_ITF_ClearRoute" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="cnt">
+          <Parameter Name="rotCode" Type="nchar" Mode="In" />
+          <Parameter Name="jrnCode" Type="nchar" Mode="In" />
+          <Parameter Name="job" Type="bit" Mode="In" />
+          <Parameter Name="JourneyUpdate" Type="char" Mode="In" />
+        </Function>
+        <Function Name="XSR_ITF_GeneralDownload" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="cnt">
+          <Parameter Name="rotCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="jrnCode" Type="nchar" Mode="In" />
+          <Parameter Name="job" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="XSR_ITF_GeneralUpload" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="cnt" />
+        <Function Name="XSR_ITF_MasterData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="cnt">
+          <Parameter Name="job" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="FDV_Entities_ModelStoreContainer">
+          <EntitySet Name="general" EntityType="Self.general" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="journeyTrace" EntityType="Self.journeyTrace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="route" EntityType="Self.route" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="lgn_rot" Association="Self.lgn_rot">
+            <End Role="login" EntitySet="login" />
+            <End Role="route" EntitySet="route" />
+          </AssociationSet>
+          <AssociationSet Name="rot_gnl" Association="Self.rot_gnl">
+            <End Role="route" EntitySet="route" />
+            <End Role="general" EntitySet="general" />
+          </AssociationSet>
+          <AssociationSet Name="rot_jrt" Association="Self.rot_jrt">
+            <End Role="route" EntitySet="route" />
+            <End Role="journeyTrace" EntitySet="journeyTrace" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FDV_Entities_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="general">
+          <Key>
+            <PropertyRef Name="rotCode" />
+            <PropertyRef Name="gnlDate" />
+          </Key>
+          <Property Name="rotCode" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="gnlDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="gnlMonthWorkingDays" Type="Int16" Nullable="false" />
+          <Property Name="gnlDaysUpToDate" Type="Int16" Nullable="false" />
+          <Property Name="gnlNextWorkingDay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="gnlExchangeRate" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="gnlDummy1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="gnlDummy2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="gnlDummy3" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="jrnCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="gnlStatus" Type="Byte" />
+          <Property Name="gnlStatusDate" Type="DateTime" Precision="3" />
+          <Property Name="gnlPartialStatus" Type="Byte" />
+          <Property Name="gnlPartialStatusDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="route" Relationship="Self.rot_gnl" FromRole="general" ToRole="route" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="lgnCode" />
+          </Key>
+          <Property Name="lgnCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="citCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="zipCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="brcCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="titCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="lgnName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lgnPassword" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="lgnForAllLogins" Type="Boolean" Nullable="false" />
+          <Property Name="lgnOnlyServer" Type="Boolean" Nullable="false" />
+          <Property Name="lgnDummy1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="lgnDummy2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="lgnID" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="lgnEnrollmentDate" Type="DateTime" Precision="3" />
+          <Property Name="lgnEmployee" Type="Boolean" Nullable="false" />
+          <Property Name="lgnCreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="lgnPhone" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="lgnStreet1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="lgnStreet2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="lgnStreet3" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="lgnBackEndCode" Type="String" MaxLength="32" FixedLength="true" Unicode="true" />
+          <Property Name="C_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="C_stamp" Type="Int32" Nullable="false" />
+          <Property Name="srgCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="lgnPassword1" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="lgnPassword2" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="lgnPassword3" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="lgnPassword4" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="lgnPasswordDate" Type="DateTime" Precision="3" />
+          <Property Name="lgnPasswordRetries" Type="Int16" />
+          <Property Name="lgnSignature" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="route" Relationship="Self.lgn_rot" FromRole="login" ToRole="route" />
+        </EntityType>
+        <EntityType Name="route">
+          <Key>
+            <PropertyRef Name="rotCode" />
+          </Key>
+          <Property Name="rotCode" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="rotName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lgnCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="prcCodeForSale" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="prcCodeForReturn" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="prcCodeForSettlement" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="txnCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="tckCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="tryCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="chaCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="groCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="ttpCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="rotCheckSameOrderClass" Type="Boolean" Nullable="false" />
+          <Property Name="rotMaxPercentageSpecial" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="rotAccumulatedSalesOfTheMonth" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="rotAccumulatedOfSpecial" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="rotMessage1" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="rotMessage2" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="rotMessage3" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="rotDummy1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="rotDummy2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceHeader1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceHeader2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceHeader3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceHeader4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceHeader5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceBottom1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceBottom2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceBottom3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceBottom4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInvoiceBottom5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rotInactive" Type="Boolean" Nullable="false" />
+          <Property Name="rotAverageTime" Type="Int16" />
+          <Property Name="rotAverageSpeed" Type="Int16" />
+          <Property Name="rotTimerValidationCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="rotHtmlPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="C_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="C_stamp" Type="Int32" Nullable="false" />
+          <Property Name="gr2Code" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="rotDriverCode" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="rotCoDriverCode" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="rotTractorNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="rotTrailerNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="C_rowVersion" Type="Int64" />
+          <NavigationProperty Name="general" Relationship="Self.rot_gnl" FromRole="route" ToRole="general" />
+          <NavigationProperty Name="login" Relationship="Self.lgn_rot" FromRole="route" ToRole="login" />
+          <NavigationProperty Name="journeyTrace" Relationship="FDV_Entities_Model.rot_jrt" FromRole="route" ToRole="journeyTrace" />
+        </EntityType>
+        <Association Name="rot_gnl">
+          <End Role="route" Type="Self.route" Multiplicity="1" />
+          <End Role="general" Type="Self.general" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="route">
+              <PropertyRef Name="rotCode" />
+            </Principal>
+            <Dependent Role="general">
+              <PropertyRef Name="rotCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="lgn_rot">
+          <End Role="login" Type="Self.login" Multiplicity="1" />
+          <End Role="route" Type="Self.route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="login">
+              <PropertyRef Name="lgnCode" />
+            </Principal>
+            <Dependent Role="route">
+              <PropertyRef Name="lgnCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FDV_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="general" EntityType="Self.general" />
+          <EntitySet Name="login" EntityType="Self.login" />
+          <EntitySet Name="route" EntityType="Self.route" />
+          <AssociationSet Name="rot_gnl" Association="Self.rot_gnl">
+            <End Role="route" EntitySet="route" />
+            <End Role="general" EntitySet="general" />
+          </AssociationSet>
+          <AssociationSet Name="lgn_rot" Association="Self.lgn_rot">
+            <End Role="login" EntitySet="login" />
+            <End Role="route" EntitySet="route" />
+          </AssociationSet>
+          <FunctionImport Name="XSR_ITF_GeneralDownload">
+            <Parameter Name="rotCode" Mode="In" Type="String" />
+            <Parameter Name="jrnCode" Mode="In" Type="String" />
+            <Parameter Name="job" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="XSR_ITF_ClearRoute">
+            <Parameter Name="rotCode" Mode="In" Type="String" />
+            <Parameter Name="jrnCode" Mode="In" Type="String" />
+            <Parameter Name="job" Mode="In" Type="Boolean" />
+            <Parameter Name="JourneyUpdate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="XSR_ITF_GeneralUpload" />
+          <FunctionImport Name="XSR_ITF_MasterData">
+          <Parameter Name="job" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <EntitySet Name="journeyTrace" EntityType="FDV_Entities_Model.journeyTrace" />
+          <AssociationSet Name="rot_jrt" Association="FDV_Entities_Model.rot_jrt">
+            <End Role="route" EntitySet="route" />
+            <End Role="journeyTrace" EntitySet="journeyTrace" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="journeyTrace">
+          <Key>
+            <PropertyRef Name="jrtCode" />
+          </Key>
+          <Property Name="jrtCode" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rotCode" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="jrnCode" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="jrtStatus" Type="Byte" />
+          <Property Name="jrtStatusDate" Type="DateTime" Precision="3" />
+          <Property Name="jrtPartialStatus" Type="Byte" />
+          <Property Name="jrtPartialStatusDate" Type="DateTime" Precision="3" />
+          <Property Name="jrtDummy" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="route" Relationship="FDV_Entities_Model.rot_jrt" FromRole="journeyTrace" ToRole="route" />
+        </EntityType>
+        <Association Name="rot_jrt">
+          <End Type="FDV_Entities_Model.route" Role="route" Multiplicity="1" />
+          <End Type="FDV_Entities_Model.journeyTrace" Role="journeyTrace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="route">
+              <PropertyRef Name="rotCode" />
+            </Principal>
+            <Dependent Role="journeyTrace">
+              <PropertyRef Name="rotCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FDV_Entities_ModelStoreContainer" CdmEntityContainer="FDV_Entities">
+          <EntitySetMapping Name="general">
+            <EntityTypeMapping TypeName="FDV_Entities_Model.general">
+              <MappingFragment StoreEntitySet="general">
+                <ScalarProperty Name="rotCode" ColumnName="rotCode" />
+                <ScalarProperty Name="gnlDate" ColumnName="gnlDate" />
+                <ScalarProperty Name="gnlMonthWorkingDays" ColumnName="gnlMonthWorkingDays" />
+                <ScalarProperty Name="gnlDaysUpToDate" ColumnName="gnlDaysUpToDate" />
+                <ScalarProperty Name="gnlNextWorkingDay" ColumnName="gnlNextWorkingDay" />
+                <ScalarProperty Name="gnlExchangeRate" ColumnName="gnlExchangeRate" />
+                <ScalarProperty Name="gnlDummy1" ColumnName="gnlDummy1" />
+                <ScalarProperty Name="gnlDummy2" ColumnName="gnlDummy2" />
+                <ScalarProperty Name="gnlDummy3" ColumnName="gnlDummy3" />
+                <ScalarProperty Name="jrnCode" ColumnName="jrnCode" />
+                <ScalarProperty Name="gnlStatus" ColumnName="gnlStatus" />
+                <ScalarProperty Name="gnlStatusDate" ColumnName="gnlStatusDate" />
+                <ScalarProperty Name="gnlPartialStatus" ColumnName="gnlPartialStatus" />
+                <ScalarProperty Name="gnlPartialStatusDate" ColumnName="gnlPartialStatusDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="FDV_Entities_Model.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="lgnCode" ColumnName="lgnCode" />
+                <ScalarProperty Name="citCode" ColumnName="citCode" />
+                <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+                <ScalarProperty Name="brcCode" ColumnName="brcCode" />
+                <ScalarProperty Name="titCode" ColumnName="titCode" />
+                <ScalarProperty Name="lgnName" ColumnName="lgnName" />
+                <ScalarProperty Name="lgnPassword" ColumnName="lgnPassword" />
+                <ScalarProperty Name="lgnForAllLogins" ColumnName="lgnForAllLogins" />
+                <ScalarProperty Name="lgnOnlyServer" ColumnName="lgnOnlyServer" />
+                <ScalarProperty Name="lgnDummy1" ColumnName="lgnDummy1" />
+                <ScalarProperty Name="lgnDummy2" ColumnName="lgnDummy2" />
+                <ScalarProperty Name="lgnID" ColumnName="lgnID" />
+                <ScalarProperty Name="lgnEnrollmentDate" ColumnName="lgnEnrollmentDate" />
+                <ScalarProperty Name="lgnEmployee" ColumnName="lgnEmployee" />
+                <ScalarProperty Name="lgnCreatedOn" ColumnName="lgnCreatedOn" />
+                <ScalarProperty Name="lgnPhone" ColumnName="lgnPhone" />
+                <ScalarProperty Name="lgnStreet1" ColumnName="lgnStreet1" />
+                <ScalarProperty Name="lgnStreet2" ColumnName="lgnStreet2" />
+                <ScalarProperty Name="lgnStreet3" ColumnName="lgnStreet3" />
+                <ScalarProperty Name="lgnBackEndCode" ColumnName="lgnBackEndCode" />
+                <ScalarProperty Name="C_deleted" ColumnName="_deleted" />
+                <ScalarProperty Name="C_stamp" ColumnName="_stamp" />
+                <ScalarProperty Name="srgCode" ColumnName="srgCode" />
+                <ScalarProperty Name="lgnPassword1" ColumnName="lgnPassword1" />
+                <ScalarProperty Name="lgnPassword2" ColumnName="lgnPassword2" />
+                <ScalarProperty Name="lgnPassword3" ColumnName="lgnPassword3" />
+                <ScalarProperty Name="lgnPassword4" ColumnName="lgnPassword4" />
+                <ScalarProperty Name="lgnPasswordDate" ColumnName="lgnPasswordDate" />
+                <ScalarProperty Name="lgnPasswordRetries" ColumnName="lgnPasswordRetries" />
+                <ScalarProperty Name="lgnSignature" ColumnName="lgnSignature" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="route">
+            <EntityTypeMapping TypeName="FDV_Entities_Model.route">
+              <MappingFragment StoreEntitySet="route">
+                <ScalarProperty Name="rotCode" ColumnName="rotCode" />
+                <ScalarProperty Name="rotName" ColumnName="rotName" />
+                <ScalarProperty Name="lgnCode" ColumnName="lgnCode" />
+                <ScalarProperty Name="prcCodeForSale" ColumnName="prcCodeForSale" />
+                <ScalarProperty Name="prcCodeForReturn" ColumnName="prcCodeForReturn" />
+                <ScalarProperty Name="prcCodeForSettlement" ColumnName="prcCodeForSettlement" />
+                <ScalarProperty Name="txnCode" ColumnName="txnCode" />
+                <ScalarProperty Name="tckCode" ColumnName="tckCode" />
+                <ScalarProperty Name="tryCode" ColumnName="tryCode" />
+                <ScalarProperty Name="chaCode" ColumnName="chaCode" />
+                <ScalarProperty Name="groCode" ColumnName="groCode" />
+                <ScalarProperty Name="ttpCode" ColumnName="ttpCode" />
+                <ScalarProperty Name="rotCheckSameOrderClass" ColumnName="rotCheckSameOrderClass" />
+                <ScalarProperty Name="rotMaxPercentageSpecial" ColumnName="rotMaxPercentageSpecial" />
+                <ScalarProperty Name="rotAccumulatedSalesOfTheMonth" ColumnName="rotAccumulatedSalesOfTheMonth" />
+                <ScalarProperty Name="rotAccumulatedOfSpecial" ColumnName="rotAccumulatedOfSpecial" />
+                <ScalarProperty Name="rotMessage1" ColumnName="rotMessage1" />
+                <ScalarProperty Name="rotMessage2" ColumnName="rotMessage2" />
+                <ScalarProperty Name="rotMessage3" ColumnName="rotMessage3" />
+                <ScalarProperty Name="rotDummy1" ColumnName="rotDummy1" />
+                <ScalarProperty Name="rotDummy2" ColumnName="rotDummy2" />
+                <ScalarProperty Name="rotInvoiceHeader1" ColumnName="rotInvoiceHeader1" />
+                <ScalarProperty Name="rotInvoiceHeader2" ColumnName="rotInvoiceHeader2" />
+                <ScalarProperty Name="rotInvoiceHeader3" ColumnName="rotInvoiceHeader3" />
+                <ScalarProperty Name="rotInvoiceHeader4" ColumnName="rotInvoiceHeader4" />
+                <ScalarProperty Name="rotInvoiceHeader5" ColumnName="rotInvoiceHeader5" />
+                <ScalarProperty Name="rotInvoiceBottom1" ColumnName="rotInvoiceBottom1" />
+                <ScalarProperty Name="rotInvoiceBottom2" ColumnName="rotInvoiceBottom2" />
+                <ScalarProperty Name="rotInvoiceBottom3" ColumnName="rotInvoiceBottom3" />
+                <ScalarProperty Name="rotInvoiceBottom4" ColumnName="rotInvoiceBottom4" />
+                <ScalarProperty Name="rotInvoiceBottom5" ColumnName="rotInvoiceBottom5" />
+                <ScalarProperty Name="rotInactive" ColumnName="rotInactive" />
+                <ScalarProperty Name="rotAverageTime" ColumnName="rotAverageTime" />
+                <ScalarProperty Name="rotAverageSpeed" ColumnName="rotAverageSpeed" />
+                <ScalarProperty Name="rotTimerValidationCode" ColumnName="rotTimerValidationCode" />
+                <ScalarProperty Name="rotHtmlPath" ColumnName="rotHtmlPath" />
+                <ScalarProperty Name="C_deleted" ColumnName="_deleted" />
+                <ScalarProperty Name="C_stamp" ColumnName="_stamp" />
+                <ScalarProperty Name="gr2Code" ColumnName="gr2Code" />
+                <ScalarProperty Name="rotDriverCode" ColumnName="rotDriverCode" />
+                <ScalarProperty Name="rotCoDriverCode" ColumnName="rotCoDriverCode" />
+                <ScalarProperty Name="rotTractorNumber" ColumnName="rotTractorNumber" />
+                <ScalarProperty Name="rotTrailerNumber" ColumnName="rotTrailerNumber" />
+                <ScalarProperty Name="C_rowVersion" ColumnName="_rowVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="XSR_ITF_GeneralDownload" FunctionName="FDV_Entities_Model.Store.XSR_ITF_GeneralDownload" />
+          <FunctionImportMapping FunctionImportName="XSR_ITF_ClearRoute" FunctionName="FDV_Entities_Model.Store.XSR_ITF_ClearRoute" />
+          <FunctionImportMapping FunctionImportName="XSR_ITF_GeneralUpload" FunctionName="FDV_Entities_Model.Store.XSR_ITF_GeneralUpload" />
+          <FunctionImportMapping FunctionImportName="XSR_ITF_MasterData" FunctionName="FDV_Entities_Model.Store.XSR_ITF_MasterData" />
+          <EntitySetMapping Name="journeyTrace">
+            <EntityTypeMapping TypeName="FDV_Entities_Model.journeyTrace">
+              <MappingFragment StoreEntitySet="journeyTrace">
+                <ScalarProperty Name="jrtDummy" ColumnName="jrtDummy" />
+                <ScalarProperty Name="jrtPartialStatusDate" ColumnName="jrtPartialStatusDate" />
+                <ScalarProperty Name="jrtPartialStatus" ColumnName="jrtPartialStatus" />
+                <ScalarProperty Name="jrtStatusDate" ColumnName="jrtStatusDate" />
+                <ScalarProperty Name="jrtStatus" ColumnName="jrtStatus" />
+                <ScalarProperty Name="jrnCode" ColumnName="jrnCode" />
+                <ScalarProperty Name="rotCode" ColumnName="rotCode" />
+                <ScalarProperty Name="jrtCode" ColumnName="jrtCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

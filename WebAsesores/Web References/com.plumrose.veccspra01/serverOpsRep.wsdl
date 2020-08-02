@@ -1,0 +1,2075 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.xsales.biz/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.xsales.biz/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.xsales.biz/webservices/">
+      <s:element name="AboutVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="AboutVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AboutVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepToXs2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepToXs2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRepToXs2Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecXs2ToRep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="route" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecXs2ToRepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecXs2ToRepResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecMasterData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecMasterDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecMasterDataResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSDownloadMasterData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSDownloadMasterDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecAsyncXSDownloadMasterDataResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRldReload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRldReloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRldReloadResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSStatusProcesss">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="trnId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSStatusProcesssResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecAsyncXSStatusProcesssResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSDownloadGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loadOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSDownloadGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecAsyncXSDownloadGeneralResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSUploadGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSUploadGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecAsyncXSUploadGeneralResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSDownloadReload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reload" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="loadOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSDownloadReloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecAsyncXSDownloadReloadResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepDownloadMasterData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepDownloadMasterDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRepDownloadMasterDataResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepDownloadGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="journeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepDownloadGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRepDownloadGeneralResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepDownloadReload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reload" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="journeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepDownloadReloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRepDownloadReloadResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepUploadGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepUploadGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRepUploadGeneralResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepClearRoute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loadOrderCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JourneyUpdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepClearRouteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRepClearRouteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routeCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="exchangeRate" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="dummy1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dummy2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dummy3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRepGeneralResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSClearRoute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loadOrderCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JourneyUpdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSClearRouteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecAsyncXSClearRouteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecAsyncGeneralResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepUploadGeneralRep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="journeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRepUploadGeneralRepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRepUploadGeneralRepResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSUploadGeneralRep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loadOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecAsyncXSUploadGeneralRepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecAsyncXSUploadGeneralRepResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRouteClone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotCodeSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotCodeTarget" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tableName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecRouteCloneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecRouteCloneResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogGetProcessedFolders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogGetProcessedFoldersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogGetProcessedFoldersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogProcessFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="folderName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsOK" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtendedMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogProcessFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogProcessFolderResult" type="tns:ServiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ServiceResult" nillable="true" type="tns:ServiceResult" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AboutVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:AboutVersion" />
+  </wsdl:message>
+  <wsdl:message name="AboutVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:AboutVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepToXs2SoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRepToXs2" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepToXs2SoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRepToXs2Response" />
+  </wsdl:message>
+  <wsdl:message name="ExecXs2ToRepSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecXs2ToRep" />
+  </wsdl:message>
+  <wsdl:message name="ExecXs2ToRepSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecXs2ToRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecMasterDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecMasterData" />
+  </wsdl:message>
+  <wsdl:message name="ExecMasterDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecMasterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadMasterDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSDownloadMasterData" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadMasterDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSDownloadMasterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRldReloadSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRldReload" />
+  </wsdl:message>
+  <wsdl:message name="ExecRldReloadSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRldReloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSStatusProcesssSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSStatusProcesss" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSStatusProcesssSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSStatusProcesssResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSDownloadGeneral" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSDownloadGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSUploadGeneral" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSUploadGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadReloadSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSDownloadReload" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadReloadSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSDownloadReloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadMasterDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRepDownloadMasterData" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadMasterDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRepDownloadMasterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRepDownloadGeneral" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRepDownloadGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadReloadSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRepDownloadReload" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadReloadSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRepDownloadReloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRepUploadGeneral" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRepUploadGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepClearRouteSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRepClearRoute" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepClearRouteSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRepClearRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRepGeneral" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRepGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSClearRouteSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSClearRoute" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSClearRouteSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSClearRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecAsyncGeneral" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecAsyncGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralRepSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRepUploadGeneralRep" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralRepSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRepUploadGeneralRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralRepSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSUploadGeneralRep" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralRepSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecAsyncXSUploadGeneralRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecRouteCloneSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecRouteClone" />
+  </wsdl:message>
+  <wsdl:message name="ExecRouteCloneSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecRouteCloneResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogGetProcessedFoldersSoapIn">
+    <wsdl:part name="parameters" element="tns:LogGetProcessedFolders" />
+  </wsdl:message>
+  <wsdl:message name="LogGetProcessedFoldersSoapOut">
+    <wsdl:part name="parameters" element="tns:LogGetProcessedFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogProcessFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:LogProcessFolder" />
+  </wsdl:message>
+  <wsdl:message name="LogProcessFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:LogProcessFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AboutVersionHttpGetIn" />
+  <wsdl:message name="AboutVersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepToXs2HttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepToXs2HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecXs2ToRepHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="route" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecXs2ToRepHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecMasterDataHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecMasterDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadMasterDataHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadMasterDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRldReloadHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRldReloadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSStatusProcesssHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="trnId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSStatusProcesssHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadGeneralHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadGeneralHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadReloadHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="reload" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadReloadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadMasterDataHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadMasterDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadGeneralHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="journeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadGeneralHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadReloadHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="reload" type="s:string" />
+    <wsdl:part name="journeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadReloadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepClearRouteHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+    <wsdl:part name="JourneyUpdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepClearRouteHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepGeneralHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="exchangeRate" type="s:string" />
+    <wsdl:part name="dummy1" type="s:string" />
+    <wsdl:part name="dummy2" type="s:string" />
+    <wsdl:part name="dummy3" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepGeneralHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSClearRouteHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+    <wsdl:part name="JourneyUpdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSClearRouteHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncGeneralHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncGeneralHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralRepHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="journeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralRepHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralRepHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralRepHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRouteCloneHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCodeSource" type="s:string" />
+    <wsdl:part name="rotCodeTarget" type="s:string" />
+    <wsdl:part name="tableName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRouteCloneHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="LogGetProcessedFoldersHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogGetProcessedFoldersHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="LogProcessFolderHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="folderName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogProcessFolderHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResult" />
+  </wsdl:message>
+  <wsdl:message name="AboutVersionHttpPostIn" />
+  <wsdl:message name="AboutVersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepToXs2HttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepToXs2HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecXs2ToRepHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="route" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecXs2ToRepHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecMasterDataHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecMasterDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadMasterDataHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadMasterDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRldReloadHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRldReloadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSStatusProcesssHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="trnId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSStatusProcesssHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadGeneralHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadGeneralHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadReloadHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="reload" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSDownloadReloadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadMasterDataHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadMasterDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadGeneralHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="journeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadGeneralHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadReloadHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="reload" type="s:string" />
+    <wsdl:part name="journeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepDownloadReloadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepClearRouteHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+    <wsdl:part name="JourneyUpdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepClearRouteHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepGeneralHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="exchangeRate" type="s:string" />
+    <wsdl:part name="dummy1" type="s:string" />
+    <wsdl:part name="dummy2" type="s:string" />
+    <wsdl:part name="dummy3" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepGeneralHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSClearRouteHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+    <wsdl:part name="JourneyUpdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSClearRouteHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncGeneralHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCode" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncGeneralHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralRepHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="journeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRepUploadGeneralRepHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralRepHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="routeCode" type="s:string" />
+    <wsdl:part name="loadOrderCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecAsyncXSUploadGeneralRepHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="ExecRouteCloneHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="rotCodeSource" type="s:string" />
+    <wsdl:part name="rotCodeTarget" type="s:string" />
+    <wsdl:part name="tableName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecRouteCloneHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="LogGetProcessedFoldersHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogGetProcessedFoldersHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="LogProcessFolderHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="folderName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogProcessFolderHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResult" />
+  </wsdl:message>
+  <wsdl:portType name="serverOpsRepSoap">
+    <wsdl:operation name="AboutVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the current version for this web service</wsdl:documentation>
+      <wsdl:input message="tns:AboutVersionSoapIn" />
+      <wsdl:output message="tns:AboutVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepToXs2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the data upload process between XSales(r) Rep to XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepToXs2SoapIn" />
+      <wsdl:output message="tns:ExecRepToXs2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecXs2ToRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the data download process between XSales(r) Rep to XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecXs2ToRepSoapIn" />
+      <wsdl:output message="tns:ExecXs2ToRepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the master data download process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecMasterDataSoapIn" />
+      <wsdl:output message="tns:ExecMasterDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Master Data Download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadMasterDataSoapIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadMasterDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRldReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Executes Download of Reload process (not initial load) to XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRldReloadSoapIn" />
+      <wsdl:output message="tns:ExecRldReloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSStatusProcesss">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Status Query.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSStatusProcesssSoapIn" />
+      <wsdl:output message="tns:ExecAsyncXSStatusProcesssSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadGeneralSoapIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route Upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSUploadGeneralSoapIn" />
+      <wsdl:output message="tns:ExecAsyncXSUploadGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Reload process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadReloadSoapIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadReloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the master data download process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadMasterDataSoapIn" />
+      <wsdl:output message="tns:ExecRepDownloadMasterDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadGeneralSoapIn" />
+      <wsdl:output message="tns:ExecRepDownloadGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the reload data download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadReloadSoapIn" />
+      <wsdl:output message="tns:ExecRepDownloadReloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data upload process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepUploadGeneralSoapIn" />
+      <wsdl:output message="tns:ExecRepUploadGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepClearRoute">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepClearRouteSoapIn" />
+      <wsdl:output message="tns:ExecRepClearRouteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute specific general data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepGeneralSoapIn" />
+      <wsdl:output message="tns:ExecRepGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSClearRoute">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSClearRouteSoapIn" />
+      <wsdl:output message="tns:ExecAsyncXSClearRouteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncGeneralSoapIn" />
+      <wsdl:output message="tns:ExecAsyncGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneralRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepUploadGeneralRepSoapIn" />
+      <wsdl:output message="tns:ExecRepUploadGeneralRepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneralRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route Upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSUploadGeneralRepSoapIn" />
+      <wsdl:output message="tns:ExecAsyncXSUploadGeneralRepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRouteClone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the route cloning process</wsdl:documentation>
+      <wsdl:input message="tns:ExecRouteCloneSoapIn" />
+      <wsdl:output message="tns:ExecRouteCloneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogGetProcessedFolders">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the folder of processed logs</wsdl:documentation>
+      <wsdl:input message="tns:LogGetProcessedFoldersSoapIn" />
+      <wsdl:output message="tns:LogGetProcessedFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogProcessFolder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Process the specified folder</wsdl:documentation>
+      <wsdl:input message="tns:LogProcessFolderSoapIn" />
+      <wsdl:output message="tns:LogProcessFolderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="serverOpsRepHttpGet">
+    <wsdl:operation name="AboutVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the current version for this web service</wsdl:documentation>
+      <wsdl:input message="tns:AboutVersionHttpGetIn" />
+      <wsdl:output message="tns:AboutVersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepToXs2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the data upload process between XSales(r) Rep to XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepToXs2HttpGetIn" />
+      <wsdl:output message="tns:ExecRepToXs2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecXs2ToRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the data download process between XSales(r) Rep to XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecXs2ToRepHttpGetIn" />
+      <wsdl:output message="tns:ExecXs2ToRepHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the master data download process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecMasterDataHttpGetIn" />
+      <wsdl:output message="tns:ExecMasterDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Master Data Download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadMasterDataHttpGetIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadMasterDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRldReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Executes Download of Reload process (not initial load) to XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRldReloadHttpGetIn" />
+      <wsdl:output message="tns:ExecRldReloadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSStatusProcesss">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Status Query.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSStatusProcesssHttpGetIn" />
+      <wsdl:output message="tns:ExecAsyncXSStatusProcesssHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadGeneralHttpGetIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadGeneralHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route Upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSUploadGeneralHttpGetIn" />
+      <wsdl:output message="tns:ExecAsyncXSUploadGeneralHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Reload process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadReloadHttpGetIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadReloadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the master data download process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadMasterDataHttpGetIn" />
+      <wsdl:output message="tns:ExecRepDownloadMasterDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadGeneralHttpGetIn" />
+      <wsdl:output message="tns:ExecRepDownloadGeneralHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the reload data download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadReloadHttpGetIn" />
+      <wsdl:output message="tns:ExecRepDownloadReloadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data upload process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepUploadGeneralHttpGetIn" />
+      <wsdl:output message="tns:ExecRepUploadGeneralHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepClearRoute">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepClearRouteHttpGetIn" />
+      <wsdl:output message="tns:ExecRepClearRouteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute specific general data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepGeneralHttpGetIn" />
+      <wsdl:output message="tns:ExecRepGeneralHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSClearRoute">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSClearRouteHttpGetIn" />
+      <wsdl:output message="tns:ExecAsyncXSClearRouteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncGeneralHttpGetIn" />
+      <wsdl:output message="tns:ExecAsyncGeneralHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneralRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepUploadGeneralRepHttpGetIn" />
+      <wsdl:output message="tns:ExecRepUploadGeneralRepHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneralRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route Upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSUploadGeneralRepHttpGetIn" />
+      <wsdl:output message="tns:ExecAsyncXSUploadGeneralRepHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRouteClone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the route cloning process</wsdl:documentation>
+      <wsdl:input message="tns:ExecRouteCloneHttpGetIn" />
+      <wsdl:output message="tns:ExecRouteCloneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogGetProcessedFolders">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the folder of processed logs</wsdl:documentation>
+      <wsdl:input message="tns:LogGetProcessedFoldersHttpGetIn" />
+      <wsdl:output message="tns:LogGetProcessedFoldersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogProcessFolder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Process the specified folder</wsdl:documentation>
+      <wsdl:input message="tns:LogProcessFolderHttpGetIn" />
+      <wsdl:output message="tns:LogProcessFolderHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="serverOpsRepHttpPost">
+    <wsdl:operation name="AboutVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the current version for this web service</wsdl:documentation>
+      <wsdl:input message="tns:AboutVersionHttpPostIn" />
+      <wsdl:output message="tns:AboutVersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepToXs2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the data upload process between XSales(r) Rep to XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepToXs2HttpPostIn" />
+      <wsdl:output message="tns:ExecRepToXs2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecXs2ToRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the data download process between XSales(r) Rep to XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecXs2ToRepHttpPostIn" />
+      <wsdl:output message="tns:ExecXs2ToRepHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the master data download process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecMasterDataHttpPostIn" />
+      <wsdl:output message="tns:ExecMasterDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Master Data Download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadMasterDataHttpPostIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadMasterDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRldReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Executes Download of Reload process (not initial load) to XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRldReloadHttpPostIn" />
+      <wsdl:output message="tns:ExecRldReloadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSStatusProcesss">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Status Query.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSStatusProcesssHttpPostIn" />
+      <wsdl:output message="tns:ExecAsyncXSStatusProcesssHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadGeneralHttpPostIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadGeneralHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route Upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSUploadGeneralHttpPostIn" />
+      <wsdl:output message="tns:ExecAsyncXSUploadGeneralHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the Reload process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSDownloadReloadHttpPostIn" />
+      <wsdl:output message="tns:ExecAsyncXSDownloadReloadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadMasterData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the master data download process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadMasterDataHttpPostIn" />
+      <wsdl:output message="tns:ExecRepDownloadMasterDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadGeneralHttpPostIn" />
+      <wsdl:output message="tns:ExecRepDownloadGeneralHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadReload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the reload data download process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepDownloadReloadHttpPostIn" />
+      <wsdl:output message="tns:ExecRepDownloadReloadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data upload process between XSales(r) Server and XSales(r) Rep.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepUploadGeneralHttpPostIn" />
+      <wsdl:output message="tns:ExecRepUploadGeneralHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepClearRoute">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepClearRouteHttpPostIn" />
+      <wsdl:output message="tns:ExecRepClearRouteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute specific general data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepGeneralHttpPostIn" />
+      <wsdl:output message="tns:ExecRepGeneralHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSClearRoute">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSClearRouteHttpPostIn" />
+      <wsdl:output message="tns:ExecAsyncXSClearRouteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncGeneral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the clear route data process on XSales(r) Rep</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncGeneralHttpPostIn" />
+      <wsdl:output message="tns:ExecAsyncGeneralHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneralRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the general data upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecRepUploadGeneralRepHttpPostIn" />
+      <wsdl:output message="tns:ExecRepUploadGeneralRepHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneralRep">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Executes the General Route Upload process between XSales(r) Rep and XSales(r) Server.</wsdl:documentation>
+      <wsdl:input message="tns:ExecAsyncXSUploadGeneralRepHttpPostIn" />
+      <wsdl:output message="tns:ExecAsyncXSUploadGeneralRepHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecRouteClone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Execute the route cloning process</wsdl:documentation>
+      <wsdl:input message="tns:ExecRouteCloneHttpPostIn" />
+      <wsdl:output message="tns:ExecRouteCloneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogGetProcessedFolders">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the folder of processed logs</wsdl:documentation>
+      <wsdl:input message="tns:LogGetProcessedFoldersHttpPostIn" />
+      <wsdl:output message="tns:LogGetProcessedFoldersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogProcessFolder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Process the specified folder</wsdl:documentation>
+      <wsdl:input message="tns:LogProcessFolderHttpPostIn" />
+      <wsdl:output message="tns:LogProcessFolderHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serverOpsRepSoap" type="tns:serverOpsRepSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AboutVersion">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/AboutVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepToXs2">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRepToXs2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecXs2ToRep">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecXs2ToRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecMasterData">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecMasterData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadMasterData">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSDownloadMasterData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRldReload">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRldReload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSStatusProcesss">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSStatusProcesss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadGeneral">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSDownloadGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneral">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSUploadGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadReload">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSDownloadReload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadMasterData">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRepDownloadMasterData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadGeneral">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRepDownloadGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadReload">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRepDownloadReload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneral">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRepUploadGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepClearRoute">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRepClearRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepGeneral">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRepGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSClearRoute">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSClearRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncGeneral">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneralRep">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRepUploadGeneralRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneralRep">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSUploadGeneralRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRouteClone">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/ExecRouteClone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogGetProcessedFolders">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/LogGetProcessedFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogProcessFolder">
+      <soap:operation soapAction="http://www.xsales.biz/webservices/LogProcessFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serverOpsRepSoap12" type="tns:serverOpsRepSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AboutVersion">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/AboutVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepToXs2">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRepToXs2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecXs2ToRep">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecXs2ToRep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecMasterData">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecMasterData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadMasterData">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSDownloadMasterData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRldReload">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRldReload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSStatusProcesss">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSStatusProcesss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadGeneral">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSDownloadGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneral">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSUploadGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadReload">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSDownloadReload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadMasterData">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRepDownloadMasterData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadGeneral">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRepDownloadGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadReload">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRepDownloadReload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneral">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRepUploadGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepClearRoute">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRepClearRoute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepGeneral">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRepGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSClearRoute">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSClearRoute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncGeneral">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneralRep">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRepUploadGeneralRep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneralRep">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecAsyncXSUploadGeneralRep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRouteClone">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/ExecRouteClone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogGetProcessedFolders">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/LogGetProcessedFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogProcessFolder">
+      <soap12:operation soapAction="http://www.xsales.biz/webservices/LogProcessFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serverOpsRepHttpGet" type="tns:serverOpsRepHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="AboutVersion">
+      <http:operation location="/AboutVersion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepToXs2">
+      <http:operation location="/ExecRepToXs2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecXs2ToRep">
+      <http:operation location="/ExecXs2ToRep" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecMasterData">
+      <http:operation location="/ExecMasterData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadMasterData">
+      <http:operation location="/ExecAsyncXSDownloadMasterData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRldReload">
+      <http:operation location="/ExecRldReload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSStatusProcesss">
+      <http:operation location="/ExecAsyncXSStatusProcesss" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadGeneral">
+      <http:operation location="/ExecAsyncXSDownloadGeneral" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneral">
+      <http:operation location="/ExecAsyncXSUploadGeneral" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadReload">
+      <http:operation location="/ExecAsyncXSDownloadReload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadMasterData">
+      <http:operation location="/ExecRepDownloadMasterData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadGeneral">
+      <http:operation location="/ExecRepDownloadGeneral" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadReload">
+      <http:operation location="/ExecRepDownloadReload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneral">
+      <http:operation location="/ExecRepUploadGeneral" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepClearRoute">
+      <http:operation location="/ExecRepClearRoute" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepGeneral">
+      <http:operation location="/ExecRepGeneral" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSClearRoute">
+      <http:operation location="/ExecAsyncXSClearRoute" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncGeneral">
+      <http:operation location="/ExecAsyncGeneral" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneralRep">
+      <http:operation location="/ExecRepUploadGeneralRep" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneralRep">
+      <http:operation location="/ExecAsyncXSUploadGeneralRep" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRouteClone">
+      <http:operation location="/ExecRouteClone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogGetProcessedFolders">
+      <http:operation location="/LogGetProcessedFolders" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogProcessFolder">
+      <http:operation location="/LogProcessFolder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serverOpsRepHttpPost" type="tns:serverOpsRepHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="AboutVersion">
+      <http:operation location="/AboutVersion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepToXs2">
+      <http:operation location="/ExecRepToXs2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecXs2ToRep">
+      <http:operation location="/ExecXs2ToRep" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecMasterData">
+      <http:operation location="/ExecMasterData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadMasterData">
+      <http:operation location="/ExecAsyncXSDownloadMasterData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRldReload">
+      <http:operation location="/ExecRldReload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSStatusProcesss">
+      <http:operation location="/ExecAsyncXSStatusProcesss" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadGeneral">
+      <http:operation location="/ExecAsyncXSDownloadGeneral" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneral">
+      <http:operation location="/ExecAsyncXSUploadGeneral" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSDownloadReload">
+      <http:operation location="/ExecAsyncXSDownloadReload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadMasterData">
+      <http:operation location="/ExecRepDownloadMasterData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadGeneral">
+      <http:operation location="/ExecRepDownloadGeneral" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepDownloadReload">
+      <http:operation location="/ExecRepDownloadReload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneral">
+      <http:operation location="/ExecRepUploadGeneral" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepClearRoute">
+      <http:operation location="/ExecRepClearRoute" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepGeneral">
+      <http:operation location="/ExecRepGeneral" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSClearRoute">
+      <http:operation location="/ExecAsyncXSClearRoute" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncGeneral">
+      <http:operation location="/ExecAsyncGeneral" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRepUploadGeneralRep">
+      <http:operation location="/ExecRepUploadGeneralRep" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAsyncXSUploadGeneralRep">
+      <http:operation location="/ExecAsyncXSUploadGeneralRep" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecRouteClone">
+      <http:operation location="/ExecRouteClone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogGetProcessedFolders">
+      <http:operation location="/LogGetProcessedFolders" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogProcessFolder">
+      <http:operation location="/LogProcessFolder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="serverOpsRep">
+    <wsdl:port name="serverOpsRepSoap" binding="tns:serverOpsRepSoap">
+      <soap:address location="http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serverOpsRepSoap12" binding="tns:serverOpsRepSoap12">
+      <soap12:address location="http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serverOpsRepHttpGet" binding="tns:serverOpsRepHttpGet">
+      <http:address location="http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serverOpsRepHttpPost" binding="tns:serverOpsRepHttpPost">
+      <http:address location="http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

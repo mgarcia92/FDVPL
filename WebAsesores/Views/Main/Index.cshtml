@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+    var path = System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Portal de Gestion Fuerza de ventas Plumrose</title>
+    <link href="~/Content/custom.css" rel="stylesheet" />
+    <link href="~/node_modules/semantic-ui-css/semantic.min.css" rel="stylesheet" />
+    <link href="~/node_modules/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/node_modules/datatables.net-se/css/dataTables.semanticui.min.css" rel="stylesheet" />
+    <link href="~/Content/Semantic-UI-Alert.css" rel="stylesheet" />
+    <link href="~/Assets/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    @Html.Hidden("Logo", Url.Content("~/Assets/img/user2.png"))
+    @Html.Hidden("virtualPath", path)
+    <div id="container">
+
+    </div>
+    @*<div id="footer"></div>*@
+    <script>
+        //URL LOGIN
+        var urlLoginApi = "@Url.Action("LogonUser", "api/LoginApi")";
+
+        //URL DATA GENERATION
+        var dataGenerationAsyncUrl = "@Url.Action("GenerateData", "api/DataGenerateApi")";      
+        var getListRouteDataUrl = "@Url.Action("getListRoutes", "api/DataGenerateApi")";   
+        var generateMasterDataUrl = "@Url.Action("GenerateMasterData", "api/DataGenerateApi")";    
+        var uploadDataUrl = "@Url.Action("UploadData", "api/DataGenerateApi")";
+
+        //URL DELETED ROUTES  
+        var getListDeletedRoutesUrl = "@Url.Action("getListDeletedRoutes", "api/DeletedRoutesApi")";
+        var updateRouteDeletedUrl = "@Url.Action("updateRouteDeleted", "api/DeletedRoutesApi")";
+
+        //URL STATES ROUTES
+        var getListGeneralUrl = "@Url.Action("GetListGeneral", "api/StatesRouteApi")";
+        var updateGeneralStatusRoute = "@Url.Action("updateGeneralStatusRoute", "api/StatesRouteApi")";
+    </script>
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/node_modules/semantic-ui-css/semantic.min.js"></script>
+    <script src="~/node_modules/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="~/node_modules/datatables.net-se/js/dataTables.semanticui.js"></script>
+    <script src="~/Scripts/Semantic-UI-Alert.js"></script>
+    <script src="~/dist/js/app.js"></script>
+</body>
+</html>

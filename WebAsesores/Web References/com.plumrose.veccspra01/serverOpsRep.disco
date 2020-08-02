@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx?wsdl" docRef="http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx" xmlns:q1="http://www.xsales.biz/webservices/" binding="q1:serverOpsRepSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx" xmlns:q2="http://www.xsales.biz/webservices/" binding="q2:serverOpsRepSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

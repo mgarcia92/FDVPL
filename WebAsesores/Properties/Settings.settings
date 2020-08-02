@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WebAsesores.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WebAsesores_com_plumrose_cgsapdb1_service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://cgsapdb1.plumrose.com:8009/sap/bc/srt/rfc/sap/zsd_site_servicios/020/service/binding</Value>
+    </Setting>
+    <Setting Name="WebAsesores_com_plumrose_veccspra01_serverOpsRep" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/serverOpsRep.asmx</Value>
+    </Setting>
+    <Setting Name="WebAsesores_com_plumrose_veccspra01Export_ExportXMLRep" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://veccspra01.plumrose.com/xsc441/xsc/rep/Inner/ExportXMLRep.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
