@@ -2,5 +2,5 @@
 
 # Requisitos
 
-	Visual Studio minimo 2017.
+	Visual Studio >= 2017.
 	React version requerida >= 16.00
